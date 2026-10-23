@@ -1,0 +1,87 @@
+{
+  "stage": "Step 8.2 unified evaluation (inference only)",
+  "model_checkpoints": {
+    "ST-only": "outputs/models/st_encoder_best.pt",
+    "Joint": "outputs/models/joint_full_best.pt"
+  },
+  "joint_checkpoint_best_epoch": 30,
+  "joint_checkpoint_validation_rmse_raw": 2.195198982207414,
+  "device": "cuda",
+  "torch_version": "2.14.1+cu130",
+  "standardizer": {
+    "mean": 7.645755767822266,
+    "std": 3.533116102218628,
+    "fitted_row_start": 0,
+    "fitted_row_end_inclusive": 6047
+  },
+  "split_boundaries_half_open": {
+    "train": [
+      0,
+      6048
+    ],
+    "validation": [
+      6048,
+      7344
+    ],
+    "test": [
+      7344,
+      8640
+    ]
+  },
+  "splits": {
+    "validation": {
+      "target_rows_half_open": [
+        6048,
+        7344
+      ],
+      "metrics": {
+        "Persistence": {
+          "mae": 1.9688644168794116,
+          "rmse": 2.8096031272883986
+        },
+        "ST-only": {
+          "mae": 1.9568274091187263,
+          "rmse": 2.5983233213609367
+        },
+        "Joint": {
+          "mae": 1.5856877937597076,
+          "rmse": 2.195198973945319
+        }
+      }
+    },
+    "test": {
+      "target_rows_half_open": [
+        7344,
+        8640
+      ],
+      "metrics": {
+        "Persistence": {
+          "mae": 1.9134809541599527,
+          "rmse": 2.7239458806475376
+        },
+        "ST-only": {
+          "mae": 1.9060717542820422,
+          "rmse": 2.5286595958697426
+        },
+        "Joint": {
+          "mae": 1.547084084918886,
+          "rmse": 2.1363249570532137
+        }
+      }
+    }
+  },
+  "test_set_used_for_training_or_model_selection": false,
+  "training_window_counts": {
+    "ST-only": 6036,
+    "Joint": 4031
+  },
+  "comparison_limitation": "Same evaluation targets and scaler; different training window counts. Not a controlled ablation.",
+  "case": {
+    "target_row": 7347,
+    "grid_index": 146,
+    "exported": true,
+    "grid_index_is_not_geographic_fid": true,
+    "real_timestamp_unavailable": true
+  },
+  "elapsed_seconds": 68.81831943092402
+}

@@ -1,0 +1,146 @@
+{
+  "split_boundaries_half_open": {
+    "train": [
+      0,
+      6048
+    ],
+    "validation": [
+      6048,
+      7344
+    ],
+    "test": [
+      7344,
+      8640
+    ]
+  },
+  "train_target_rows": [
+    3000,
+    3001,
+    3002,
+    3003,
+    3004,
+    3005,
+    3006,
+    3007
+  ],
+  "validation_target_rows": [
+    6100,
+    6101
+  ],
+  "test_rows_used": false,
+  "train_validation_overlap": false,
+  "duplicate_training_windows": false,
+  "event_threshold_reference_policy": "For row r, only prior days at the same daily slot ±1 are used; no row >= r enters its threshold.",
+  "snapshot_policy": "At target t, observation_cutoff=t-1. Ongoing events expose only observed_start through cutoff; no future final end. Recent ended events within the configured horizon are retained.",
+  "all_semantic_evidence_before_target": true,
+  "ongoing_events_do_not_expose_future_end": true,
+  "prediction_labels_enter_semantic_input": false,
+  "static_poi_classification": "static only",
+  "future_precipitation_used": false,
+  "weather_feature_policy": "Weather is omitted in Step 7A snapshots; therefore no future precipitation can enter.",
+  "step5_test_case_checkpoint_used_for_semantic_initialization": false,
+  "semantic_encoder_initialization": "fresh random initialization with fixed seed; train-split smoke windows only",
+  "case_7347_used_in_training": false,
+  "snapshot_audits": [
+    {
+      "target_row_index": 3000,
+      "observation_cutoff": 2999,
+      "maximum_dynamic_evidence_row": 2999,
+      "evidence_before_target": true,
+      "ongoing_events_hide_future_end": true,
+      "target_speed_in_semantic_features": false,
+      "future_precipitation_used": false,
+      "static_poi_treated_as_static": true
+    },
+    {
+      "target_row_index": 3001,
+      "observation_cutoff": 3000,
+      "maximum_dynamic_evidence_row": 3000,
+      "evidence_before_target": true,
+      "ongoing_events_hide_future_end": true,
+      "target_speed_in_semantic_features": false,
+      "future_precipitation_used": false,
+      "static_poi_treated_as_static": true
+    },
+    {
+      "target_row_index": 3002,
+      "observation_cutoff": 3001,
+      "maximum_dynamic_evidence_row": 3001,
+      "evidence_before_target": true,
+      "ongoing_events_hide_future_end": true,
+      "target_speed_in_semantic_features": false,
+      "future_precipitation_used": false,
+      "static_poi_treated_as_static": true
+    },
+    {
+      "target_row_index": 3003,
+      "observation_cutoff": 3002,
+      "maximum_dynamic_evidence_row": 3002,
+      "evidence_before_target": true,
+      "ongoing_events_hide_future_end": true,
+      "target_speed_in_semantic_features": false,
+      "future_precipitation_used": false,
+      "static_poi_treated_as_static": true
+    },
+    {
+      "target_row_index": 3004,
+      "observation_cutoff": 3003,
+      "maximum_dynamic_evidence_row": 3003,
+      "evidence_before_target": true,
+      "ongoing_events_hide_future_end": true,
+      "target_speed_in_semantic_features": false,
+      "future_precipitation_used": false,
+      "static_poi_treated_as_static": true
+    },
+    {
+      "target_row_index": 3005,
+      "observation_cutoff": 3004,
+      "maximum_dynamic_evidence_row": 3004,
+      "evidence_before_target": true,
+      "ongoing_events_hide_future_end": true,
+      "target_speed_in_semantic_features": false,
+      "future_precipitation_used": false,
+      "static_poi_treated_as_static": true
+    },
+    {
+      "target_row_index": 3006,
+      "observation_cutoff": 3005,
+      "maximum_dynamic_evidence_row": 3005,
+      "evidence_before_target": true,
+      "ongoing_events_hide_future_end": true,
+      "target_speed_in_semantic_features": false,
+      "future_precipitation_used": false,
+      "static_poi_treated_as_static": true
+    },
+    {
+      "target_row_index": 3007,
+      "observation_cutoff": 3006,
+      "maximum_dynamic_evidence_row": 3006,
+      "evidence_before_target": true,
+      "ongoing_events_hide_future_end": true,
+      "target_speed_in_semantic_features": false,
+      "future_precipitation_used": false,
+      "static_poi_treated_as_static": true
+    },
+    {
+      "target_row_index": 6100,
+      "observation_cutoff": 6099,
+      "maximum_dynamic_evidence_row": 6096,
+      "evidence_before_target": true,
+      "ongoing_events_hide_future_end": true,
+      "target_speed_in_semantic_features": false,
+      "future_precipitation_used": false,
+      "static_poi_treated_as_static": true
+    },
+    {
+      "target_row_index": 6101,
+      "observation_cutoff": 6100,
+      "maximum_dynamic_evidence_row": 6100,
+      "evidence_before_target": true,
+      "ongoing_events_hide_future_end": true,
+      "target_speed_in_semantic_features": false,
+      "future_precipitation_used": false,
+      "static_poi_treated_as_static": true
+    }
+  ]
+}

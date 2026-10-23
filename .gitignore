@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# 外部参考
+external/
+
+# 数据
+data/
+
+# 同步脚本
+scripts/sync_to_gpu.sh
+
+

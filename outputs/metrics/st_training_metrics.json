@@ -1,0 +1,222 @@
+{
+  "stage": "Step 4 spatiotemporal graph encoder",
+  "config": {
+    "seed": 42,
+    "sequence_length": 12,
+    "hidden_dim": 32,
+    "batch_size": 128,
+    "learning_rate": 0.001,
+    "max_epochs": 15,
+    "patience": 4,
+    "min_delta": 1e-05,
+    "train_ratio": 0.7,
+    "validation_ratio": 0.15,
+    "test_ratio": 0.15,
+    "device": "cpu"
+  },
+  "source_paths": {
+    "traffic": "data/raw/Main data/prediction_data/feature_matrix_X.csv",
+    "adjacency": "data/raw/Main data/prediction_data/adj_matrix.csv"
+  },
+  "data_shape": {
+    "traffic": [
+      8640,
+      265
+    ],
+    "adjacency": [
+      265,
+      265
+    ]
+  },
+  "split_boundaries_row_ranges_half_open": {
+    "train": [
+      0,
+      6048
+    ],
+    "validation": [
+      6048,
+      7344
+    ],
+    "test": [
+      7344,
+      8640
+    ]
+  },
+  "datasets": {
+    "train": {
+      "samples": 6036,
+      "target_row_range_inclusive": [
+        12,
+        6047
+      ],
+      "first_history_row_range_inclusive": [
+        0,
+        11
+      ],
+      "last_history_row_range_inclusive": [
+        6035,
+        6046
+      ],
+      "future_information_in_input": false
+    },
+    "validation": {
+      "samples": 1296,
+      "target_row_range_inclusive": [
+        6048,
+        7343
+      ],
+      "first_history_row_range_inclusive": [
+        6036,
+        6047
+      ],
+      "last_history_row_range_inclusive": [
+        7331,
+        7342
+      ],
+      "future_information_in_input": false
+    },
+    "test": {
+      "samples": 1296,
+      "target_row_range_inclusive": [
+        7344,
+        8639
+      ],
+      "first_history_row_range_inclusive": [
+        7332,
+        7343
+      ],
+      "last_history_row_range_inclusive": [
+        8627,
+        8638
+      ],
+      "future_information_in_input": false
+    }
+  },
+  "standardizer": {
+    "mean": 7.645755767822266,
+    "std": 3.533116102218628,
+    "fitted_row_start": 0,
+    "fitted_row_end_inclusive": 6047
+  },
+  "forward_shape_test": {
+    "input": [
+      2,
+      12,
+      265,
+      1
+    ],
+    "embedding": [
+      2,
+      265,
+      32
+    ],
+    "prediction": [
+      2,
+      265
+    ],
+    "passed": true
+  },
+  "training": {
+    "epochs_completed": 15,
+    "best_epoch": 15,
+    "early_stopped": false,
+    "history": [
+      {
+        "epoch": 1,
+        "train_mse_standardized": 0.6543202717782963,
+        "validation_mse_standardized": 0.5614474191341872
+      },
+      {
+        "epoch": 2,
+        "train_mse_standardized": 0.5451284206964229,
+        "validation_mse_standardized": 0.5470757116506129
+      },
+      {
+        "epoch": 3,
+        "train_mse_standardized": 0.5359771718759265,
+        "validation_mse_standardized": 0.542549784168785
+      },
+      {
+        "epoch": 4,
+        "train_mse_standardized": 0.5341383890255624,
+        "validation_mse_standardized": 0.5419449986499033
+      },
+      {
+        "epoch": 5,
+        "train_mse_standardized": 0.5338516147662821,
+        "validation_mse_standardized": 0.5416199255872656
+      },
+      {
+        "epoch": 6,
+        "train_mse_standardized": 0.5336498658415337,
+        "validation_mse_standardized": 0.5413900713125864
+      },
+      {
+        "epoch": 7,
+        "train_mse_standardized": 0.5334920977384859,
+        "validation_mse_standardized": 0.5412668471719012
+      },
+      {
+        "epoch": 8,
+        "train_mse_standardized": 0.5333536646870132,
+        "validation_mse_standardized": 0.5412523757528376
+      },
+      {
+        "epoch": 9,
+        "train_mse_standardized": 0.5333725763836628,
+        "validation_mse_standardized": 0.5411577235769343
+      },
+      {
+        "epoch": 10,
+        "train_mse_standardized": 0.5332055184681578,
+        "validation_mse_standardized": 0.5411395485754367
+      },
+      {
+        "epoch": 11,
+        "train_mse_standardized": 0.5331282737319876,
+        "validation_mse_standardized": 0.5412061133502443
+      },
+      {
+        "epoch": 12,
+        "train_mse_standardized": 0.5330770946718194,
+        "validation_mse_standardized": 0.5410290765173641
+      },
+      {
+        "epoch": 13,
+        "train_mse_standardized": 0.5329990593544927,
+        "validation_mse_standardized": 0.540960184585901
+      },
+      {
+        "epoch": 14,
+        "train_mse_standardized": 0.5329549868348579,
+        "validation_mse_standardized": 0.5408556041894136
+      },
+      {
+        "epoch": 15,
+        "train_mse_standardized": 0.5328882679471597,
+        "validation_mse_standardized": 0.5408415753900269
+      }
+    ]
+  },
+  "test_metrics": {
+    "mae": 1.906070590019226,
+    "rmse": 2.5286574363708496
+  },
+  "persistence_baseline_test_metrics": {
+    "mae": 1.9134808778762817,
+    "rmse": 2.7239458560943604
+  },
+  "improvement_over_persistence_percent": {
+    "mae": 0.3872674110691993,
+    "rmse": 7.169320905795043
+  },
+  "parameter_count": 6433,
+  "runtime_seconds": 96.05381858395413,
+  "artifacts": {
+    "checkpoint": "outputs/models/st_encoder_best.pt",
+    "embedding": "outputs/embeddings/E_st.npy",
+    "embedding_metadata": "outputs/embeddings/E_st_metadata.json",
+    "evaluation_arrays": "outputs/metrics/st_evaluation_arrays.npz"
+  },
+  "sampling_strategy": "Full chronological dataset; no temporal or node subsampling during training/evaluation."
+}

@@ -1,0 +1,155 @@
+{
+  "stage": "Step 7A joint pipeline smoke test",
+  "component_reuse": {
+    "reused": [
+      "data_loader header-safe loading and train-only scaler",
+      "12-step temporal window semantics",
+      "trained Step 4 SpatialTemporalEncoder weights, frozen",
+      "Step 5 relation-aware message passing design",
+      "Step 6 masked multi-head Cross-Attention with gated residual"
+    ],
+    "extended": [
+      "causal time-indexed semantic snapshots",
+      "variable semantic-node batching",
+      "fresh train-split semantic encoder",
+      "separate joint prediction head",
+      "device-portable smoke trainer and leakage audit"
+    ]
+  },
+  "config": {
+    "seed": 42,
+    "device": "auto",
+    "sequence_length": 12,
+    "hidden_dim": 32,
+    "batch_size": 2,
+    "learning_rate": 0.001,
+    "smoke_epochs": 2,
+    "smoke_train_target_start": 3000,
+    "smoke_train_window_count": 8,
+    "smoke_validation_target_start": 6100,
+    "smoke_validation_window_count": 2,
+    "recent_event_horizon": 36,
+    "max_dynamic_events": 48
+  },
+  "resolved_device": "cpu",
+  "torch_version": "2.14.1",
+  "cuda_available": false,
+  "data_windows": {
+    "full_train": 6036,
+    "full_validation": 1296,
+    "full_test": 1296,
+    "smoke_train": 8,
+    "smoke_validation": 2
+  },
+  "static_cache": {
+    "nodes": 274,
+    "edges": 2042,
+    "causal_signal_precompute_seconds": 2.572292709024623
+  },
+  "snapshot_generation": {
+    "unique_snapshots": 10,
+    "total_calls": 18,
+    "total_seconds": 0.022204957902431488,
+    "mean_seconds_per_call_including_cache_hits": 0.0012336087723573048,
+    "mean_node_count": 297.0,
+    "variable_node_counts": [
+      295,
+      297,
+      298,
+      299
+    ],
+    "lifecycle": "ongoing and recently ended event nodes; current cutoff only; future final end hidden"
+  },
+  "tensor_shapes": {
+    "X_batch": [
+      2,
+      12,
+      265,
+      1
+    ],
+    "target": [
+      2,
+      265
+    ],
+    "E_st": [
+      2,
+      265,
+      32
+    ],
+    "E_se_per_sample": [
+      [
+        295,
+        32
+      ],
+      [
+        295,
+        32
+      ]
+    ],
+    "attention_mask_per_sample": [
+      [
+        265,
+        295
+      ],
+      [
+        265,
+        295
+      ]
+    ],
+    "attention_weights_per_sample": [
+      [
+        4,
+        265,
+        295
+      ],
+      [
+        4,
+        265,
+        295
+      ]
+    ],
+    "semantic_context": [
+      2,
+      265,
+      32
+    ],
+    "E_joint": [
+      2,
+      265,
+      32
+    ],
+    "prediction": [
+      2,
+      265
+    ]
+  },
+  "training": {
+    "history": [
+      {
+        "epoch": 1,
+        "mean_training_mse_standardized": 0.6833062767982483
+      },
+      {
+        "epoch": 2,
+        "mean_training_mse_standardized": 0.616438701748848
+      }
+    ],
+    "validation_mse_standardized": 1.9701637029647827,
+    "cross_attention_nonzero_gradient": true,
+    "cross_attention_parameter_updated": true,
+    "semantic_snapshots_differ": true
+  },
+  "timing": {
+    "forward_seconds_total": 0.08675308199599385,
+    "backward_seconds_total": 0.09625408099964261,
+    "mean_forward_backward_seconds_per_train_batch": 0.022875895374454558,
+    "total_runtime_seconds": 2.9418122910428792,
+    "estimated_full_epoch_seconds_cpu_or_current_device": 76.48551479005255,
+    "estimate_basis": "3018 batches × observed smoke forward/backward plus 6036 on-demand snapshot calls; rough linear estimate"
+  },
+  "memory": {
+    "peak_process_rss_mb": 616.90625,
+    "cuda_peak_allocated_mb": null
+  },
+  "leakage_audit_path": "outputs/metrics/joint_data_leakage_audit.json"
+}

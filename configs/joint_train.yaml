@@ -1,0 +1,15 @@
+{
+  "seed": 42,
+  "device": "auto",
+  "sequence_length": 12,
+  "hidden_dim": 32,
+  "batch_size": 2,
+  "learning_rate": 0.001,
+  "smoke_epochs": 2,
+  "smoke_train_target_start": 3000,
+  "smoke_train_window_count": 8,
+  "smoke_validation_target_start": 6100,
+  "smoke_validation_window_count": 2,
+  "recent_event_horizon": 36,
+  "max_dynamic_events": 48
+}

@@ -1,0 +1,142 @@
+{
+  "alignment_validation": {
+    "E_st_shape_matches_metadata": true,
+    "E_se_shape_matches_metadata": true,
+    "E_st_case_row_is_7347": true,
+    "E_se_case_row_is_7347": true,
+    "same_case": true,
+    "E_st_node_indices_exact": true,
+    "E_se_row_mapping_bijective": true,
+    "E_se_node_order_exact": true,
+    "graph_node_set_matches_E_se": true,
+    "graph_has_exact_grid_indices": true,
+    "grid_ids_match_declared_node_index": true,
+    "grid_semantic_rows_resolve": true
+  },
+  "attention_mask": {
+    "shape": [
+      265,
+      277
+    ],
+    "valid_element_count": 2314,
+    "total_element_count": 73405,
+    "coverage_ratio": 0.03152373816497514,
+    "valid_keys_per_query": {
+      "minimum": 2,
+      "maximum": 13,
+      "mean": 8.732075471698113
+    }
+  },
+  "cross_attention_architecture": {
+    "embedding_dim": 32,
+    "num_heads": 4,
+    "parameter_count": 6368,
+    "trained": false,
+    "forward_executed": true,
+    "attention_weights_shape": [
+      4,
+      265,
+      277
+    ],
+    "attention_weights_source": "Actual PyTorch MultiheadAttention forward with fixed seed 42 and relation mask; weights are untrained allocation weights, not causal contributions."
+  },
+  "fusion_training": {
+    "performed": false,
+    "reason": "Only one aligned semantic Case exists; repeating it would not create independent temporal supervision.",
+    "base_encoders_frozen_and_not_retrained": true
+  },
+  "E_joint": {
+    "shape": [
+      265,
+      32
+    ],
+    "method": "deterministic rule-weighted baseline",
+    "trained": false
+  },
+  "data_leakage": {
+    "future_data_used_for_fusion_training": false,
+    "fusion_training_samples": 0,
+    "single_case_repeated": false,
+    "case_row_index": 7347
+  },
+  "grid_146_rule_weights": [
+    {
+      "semantic_node_id": "grid:146",
+      "semantic_row_index": 146,
+      "normalized_weight": 0.3409090909090909,
+      "categories": [
+        "SELF_SPATIAL_GRID"
+      ]
+    },
+    {
+      "semantic_node_id": "poi_category:0",
+      "semantic_row_index": 265,
+      "normalized_weight": 0.15151515151515152,
+      "categories": [
+        "HAS_POI"
+      ]
+    },
+    {
+      "semantic_node_id": "poi_category:6",
+      "semantic_row_index": 271,
+      "normalized_weight": 0.15151515151515152,
+      "categories": [
+        "HAS_POI"
+      ]
+    },
+    {
+      "semantic_node_id": "grid:144",
+      "semantic_row_index": 144,
+      "normalized_weight": 0.07575757575757576,
+      "categories": [
+        "ONE_HOP_ADJACENT_GRID"
+      ]
+    },
+    {
+      "semantic_node_id": "grid:147",
+      "semantic_row_index": 147,
+      "normalized_weight": 0.07575757575757576,
+      "categories": [
+        "ONE_HOP_ADJACENT_GRID"
+      ]
+    },
+    {
+      "semantic_node_id": "event:grid_146:rows_7345_7349",
+      "semantic_row_index": 272,
+      "normalized_weight": 0.15151515151515152,
+      "categories": [
+        "LOCAL_EVENT"
+      ]
+    },
+    {
+      "semantic_node_id": "event:grid_147:rows_7347_7348",
+      "semantic_row_index": 273,
+      "normalized_weight": 0.022727272727272724,
+      "categories": [
+        "EVENT_RELATION"
+      ]
+    },
+    {
+      "semantic_node_id": "rule:monitor_adjacent",
+      "semantic_row_index": 275,
+      "normalized_weight": 0.015151515151515152,
+      "categories": [
+        "EVENT_PATH_RULE"
+      ]
+    },
+    {
+      "semantic_node_id": "rule:review_poi_context",
+      "semantic_row_index": 276,
+      "normalized_weight": 0.015151515151515152,
+      "categories": [
+        "EVENT_PATH_RULE"
+      ]
+    }
+  ],
+  "limitations": [
+    "Cross-Attention parameters are untrained; attention visualization is architectural demonstration only.",
+    "E_joint is a deterministic rule baseline, not a learned improvement.",
+    "No fusion performance claim is made from one Case.",
+    "Node identity relies on verified metadata and graph properties; geographic FIDs remain unavailable."
+  ]
+}

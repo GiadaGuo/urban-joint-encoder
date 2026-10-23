@@ -1,0 +1,273 @@
+{
+  "generated_by": "notebooks/01_data_overview.ipynb",
+  "read_policy": "All supplied CSV files are read with header=None and UTF-8 BOM handling.",
+  "files": {
+    "traffic": {
+      "path": "data/raw/Main data/prediction_data/feature_matrix_X.csv",
+      "shape": [
+        8640,
+        265
+      ],
+      "dtypes": [
+        "float64"
+      ],
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "min": 0.0,
+      "max": 39.974,
+      "mean": 7.612385776667771,
+      "std": 3.527879775721638,
+      "zero_ratio": 1.0045422781271837e-05
+    },
+    "adjacency": {
+      "path": "data/raw/Main data/prediction_data/adj_matrix.csv",
+      "shape": [
+        265,
+        265
+      ],
+      "dtypes": [
+        "float64"
+      ],
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "min": 0.0,
+      "max": 1.0,
+      "mean": 0.008885724457102171,
+      "std": 0.09384505190813335,
+      "zero_ratio": 0.9911142755428979
+    },
+    "poi_1": {
+      "path": "data/raw/Main data/prediction_data/POI/poi1.csv",
+      "shape": [
+        1,
+        265
+      ],
+      "dtypes": [
+        "int64"
+      ],
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "min": 0.0,
+      "max": 34.0,
+      "mean": 7.916981132075471,
+      "std": 6.169381134213391,
+      "zero_ratio": 0.03018867924528302
+    },
+    "poi_2": {
+      "path": "data/raw/Main data/prediction_data/POI/poi2.csv",
+      "shape": [
+        1,
+        265
+      ],
+      "dtypes": [
+        "int64"
+      ],
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "min": 0.0,
+      "max": 168.0,
+      "mean": 4.916981132075471,
+      "std": 12.186706242202343,
+      "zero_ratio": 0.2641509433962264
+    },
+    "poi_3": {
+      "path": "data/raw/Main data/prediction_data/POI/poi3.csv",
+      "shape": [
+        1,
+        265
+      ],
+      "dtypes": [
+        "int64"
+      ],
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "min": 0.0,
+      "max": 55.0,
+      "mean": 8.445283018867924,
+      "std": 9.55237884932128,
+      "zero_ratio": 0.07924528301886792
+    },
+    "poi_4": {
+      "path": "data/raw/Main data/prediction_data/POI/poi4.csv",
+      "shape": [
+        1,
+        265
+      ],
+      "dtypes": [
+        "int64"
+      ],
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "min": 0.0,
+      "max": 25.0,
+      "mean": 2.479245283018868,
+      "std": 3.5248768778501023,
+      "zero_ratio": 0.35471698113207545
+    },
+    "poi_5": {
+      "path": "data/raw/Main data/prediction_data/POI/poi5.csv",
+      "shape": [
+        1,
+        265
+      ],
+      "dtypes": [
+        "int64"
+      ],
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "min": 0.0,
+      "max": 107.0,
+      "mean": 10.30188679245283,
+      "std": 15.096639333103315,
+      "zero_ratio": 0.16981132075471697
+    },
+    "poi_6": {
+      "path": "data/raw/Main data/prediction_data/POI/poi6.csv",
+      "shape": [
+        1,
+        265
+      ],
+      "dtypes": [
+        "int64"
+      ],
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "min": 0.0,
+      "max": 12.0,
+      "mean": 1.0188679245283019,
+      "std": 1.8016255921130397,
+      "zero_ratio": 0.5849056603773585
+    },
+    "poi_7": {
+      "path": "data/raw/Main data/prediction_data/POI/poi7.csv",
+      "shape": [
+        1,
+        265
+      ],
+      "dtypes": [
+        "int64"
+      ],
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "min": 0.0,
+      "max": 90.0,
+      "mean": 10.867924528301886,
+      "std": 14.11376629695956,
+      "zero_ratio": 0.1660377358490566
+    },
+    "precipitation_station_1": {
+      "path": "data/raw/Main data/prediction_data/precipitation/station1.csv",
+      "shape": [
+        8640,
+        1
+      ],
+      "dtypes": [
+        "float64"
+      ],
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "min": 0.0,
+      "max": 17.7,
+      "mean": 0.15819444444444444,
+      "std": 0.9489663217991142,
+      "zero_ratio": 0.8930555555555556
+    },
+    "precipitation_station_2": {
+      "path": "data/raw/Main data/prediction_data/precipitation/station2.csv",
+      "shape": [
+        8640,
+        1
+      ],
+      "dtypes": [
+        "float64"
+      ],
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "min": 0.0,
+      "max": 11.6,
+      "mean": 0.14958333333333335,
+      "std": 0.75217002884065,
+      "zero_ratio": 0.8888888888888888
+    }
+  },
+  "traffic": {
+    "time_steps": 8640,
+    "spatial_nodes": 265
+  },
+  "poi": {
+    "category_count": 7,
+    "category_names": [
+      "交通设施服务",
+      "住宿服务",
+      "公司企业",
+      "医疗保健服务",
+      "购物服务",
+      "风景名胜",
+      "餐饮服务"
+    ],
+    "matrix_shape_nodes_by_categories": [
+      265,
+      7
+    ],
+    "nodes_with_any_poi": 264,
+    "nodes_without_any_poi": 1,
+    "coverage_ratio": 0.9962264150943396,
+    "nonzero_nodes_by_category": {
+      "交通设施服务": 257,
+      "住宿服务": 195,
+      "公司企业": 244,
+      "医疗保健服务": 171,
+      "购物服务": 220,
+      "风景名胜": 110,
+      "餐饮服务": 221
+    }
+  },
+  "precipitation": {
+    "series_lengths": [
+      8640,
+      8640
+    ],
+    "station_labels_from_source": [
+      "徐家汇",
+      "浦东"
+    ]
+  },
+  "graph": {
+    "nodes": 265,
+    "edges": 312,
+    "is_square": true,
+    "is_symmetric": true,
+    "self_loop_count": 0,
+    "self_loop_nodes": [],
+    "isolated_node_count": 0,
+    "isolated_nodes": [],
+    "non_binary_entry_count": 0
+  },
+  "alignment_checks": {
+    "traffic_columns_equal_adjacency_nodes": true,
+    "poi_lengths_equal_traffic_nodes": true,
+    "precipitation_lengths_equal_traffic_steps": true,
+    "node_identity_order_verified": false,
+    "time_identity_verified": false,
+    "assessment": "Shape/length compatibility passes. The generator code indicates shared grid-column order for traffic, adjacency and POI, but exported ID labels are absent; supplied files alone cannot re-verify identity. Precipitation is positionally compatible, but timestamps were removed and semantic time alignment is unverified."
+  },
+  "source_findings": {
+    "confirmed": [
+      "Traffic rows are consecutive batch slots and columns are selected Huangpu District honeycomb grids.",
+      "The source reshapes 8640 slots as 30 days x 288 slots/day, implying five-minute slots.",
+      "Traffic values are local_avg_speed after tensor completion; values above 40 were marked missing before completion.",
+      "Adjacency is road-based: roads within grids connected by a road touch relation induce grid edges.",
+      "Disconnected grids were linked to a connected grid through a honeycomb adjacency shortest path (1..10 hops).",
+      "POI files are per-grid counts for the seven named categories and were exported in traffic grid-column order.",
+      "Precipitation files retain the precipitation-mm column from Xujiahui and Pudong station CSVs."
+    ],
+    "pending_confirmation": [
+      "Original honeycomb/FID labels are absent from the headerless exports, so node identity/order cannot be independently audited.",
+      "No timestamps are present in traffic or precipitation exports, so exact temporal alignment cannot be independently audited.",
+      "No geographic coordinates are present in prediction_data; topology plots are not maps.",
+      "Traffic-speed physical unit is not stated in the inspected source or README.",
+      "The precipitation notebook does not document source sampling interval or explicit resampling/alignment."
+    ]
+  },
+  "known_reference_code_risk": "Reference load_features() uses pd.read_csv(feat_path) without header=None, which treats the first numeric row as a header. This audit preserves all 8640 rows."
+}

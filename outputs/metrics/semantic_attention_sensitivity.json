@@ -1,0 +1,34 @@
+{
+  "stage": "Step 8.3 inference-only dynamic-event attention masking sensitivity",
+  "split": "validation",
+  "target_rows_half_open": [
+    6048,
+    7344
+  ],
+  "windows": 1296,
+  "checkpoint": "outputs/models/joint_full_best.pt",
+  "device": "cuda",
+  "conditions": {
+    "Full Joint": {
+      "mae": 1.5856877947225734,
+      "rmse": 2.195198974102256
+    },
+    "Mask Dynamic": {
+      "mae": 1.5903987567997635,
+      "rmse": 2.2020187271726033
+    }
+  },
+  "mask_minus_full": {
+    "mae": 0.004710962077190128,
+    "rmse": 0.006819753070347101
+  },
+  "event_nodes_per_snapshot": {
+    "mean": 21.236882716049383,
+    "min": 3,
+    "max": 48
+  },
+  "originally_allowed_event_attention_connections": 27523,
+  "masking_method": "Set attention_mask[:, CongestionEvent node indices] = False; graph node features, edges, semantic GNN, and model weights unchanged.",
+  "limitation": "Dynamic event messages can still propagate to static semantic nodes in the GNN; not complete event removal or retrained ablation. Test split not used.",
+  "elapsed_seconds": 81.94242852600291
+}

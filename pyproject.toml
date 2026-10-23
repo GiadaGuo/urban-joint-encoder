@@ -1,0 +1,30 @@
+[project]
+name = "urban-joint-encoder"
+version = "0.1.0"
+description = "Reproducible spatiotemporal-semantic urban traffic encoding pipeline"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ipykernel>=7.4.0",
+    "jupyter>=1.1.1",
+    "matplotlib>=3.11.2",
+    "networkx>=3.6.1",
+    "numpy>=2.4.6",
+    "pandas>=3.1.0",
+    "plotly>=7.1.0",
+    "pyarrow>=26.0.0",
+    "requests>=2.34.2",
+    "scikit-learn>=1.9.1",
+    "scipy>=1.17.1",
+    "torch>=2.14.1",
+    "tqdm>=4.70.1",
+    "umap-learn>=0.5.12",
+]
+
+[project.scripts]
+urban-joint-encoder = "urban_joint_encoder:main"
+train-joint = "urban_joint_encoder.train_joint:main"
+
+[build-system]
+requires = ["uv_build>=0.12.15,<0.13.0"]
+build-backend = "uv_build"

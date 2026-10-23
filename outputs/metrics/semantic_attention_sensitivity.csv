@@ -1,0 +1,3 @@
+condition,split,windows,num_grids,mae,rmse
+Full Joint,validation,1296,265,1.5856877947225734,2.195198974102256
+Mask Dynamic,validation,1296,265,1.5903987567997635,2.2020187271726033
